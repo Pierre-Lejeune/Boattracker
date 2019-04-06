@@ -1,6 +1,13 @@
-package fr.caill0u.boattrackerapp.objects;
+package fr.caill0u.boat_tracker.objects;
+
+import android.util.Log;
+
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 public class ContainerShipType {
     private ArrayList<ContainerShipType> allContainerShipType = new ArrayList<>();
     private int id = 0;
@@ -32,6 +39,7 @@ public class ContainerShipType {
 
     public void setLenght(int lenght) {
         this.lenght = lenght;
+        pushToFireBase();
     }
 
     public int getHeight() {
@@ -40,6 +48,7 @@ public class ContainerShipType {
 
     public void setHeight(int height) {
         this.height = height;
+        pushToFireBase();
     }
 
     public int getWidth() {
@@ -48,6 +57,7 @@ public class ContainerShipType {
 
     public void setWidth(int width) {
         this.width = width;
+        pushToFireBase();
     }
 
     public String getName() {
@@ -56,8 +66,18 @@ public class ContainerShipType {
 
     public void setName(String name) {
         this.name = name;
+        pushToFireBase();
     }
     public int getId(){
         return this.id;
+    }
+    public void pushToFireBase(){
+        Map type = new HashMap();
+        type.put("lenght", this.lenght);
+        type.put("height", this.height);
+        type.put("width", this.width);
+        type.put("name", this.name);
+        type.put("id", this.id);
+        FirebaseFirestore.getInstance().document("containerShipType/ContainerShipType" + this.id).set(type);
     }
 }

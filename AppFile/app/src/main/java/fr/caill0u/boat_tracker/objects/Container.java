@@ -1,4 +1,6 @@
-package fr.caill0u.boattrackerapp.objects;
+package fr.caill0u.boat_tracker.objects;
+
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -26,6 +28,7 @@ public class Container {
         this.width = width;
         allContainers.add(this);
         this.id = allContainers.size();
+        pushToFirestore();
     }
 
     public int getId() {
@@ -63,5 +66,13 @@ public class Container {
 
     public static ArrayList<Container> getAllContainers(){
         return allContainers;
+    }
+    private void pushToFirestore(){
+        Map container = new HashMap();
+        container.put("lenght", this.lenght);
+        container.put("width", this.width);
+        container.put("height", this.height);
+        container.put("id", this.id);
+        FirebaseFirestore.getInstance().document("Container/container" + this.id).set(container);
     }
 }

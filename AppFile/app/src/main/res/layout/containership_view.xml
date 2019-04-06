@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="fr.caill0u.boattrackerapp.MainActivity"
+    tools:context="fr.caill0u.boat_tracker.MainActivity"
     tools:showIn="@layout/app_bar_main"
     android:orientation="vertical"
     >
@@ -58,4 +58,60 @@
         android:textSize="15dp"
         android:id="@+id/place"
         android:layout_gravity="center"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp">
+        <ImageButton
+            android:src="@drawable/ic_map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/consultOnMap"
+            android:layout_gravity="center"
+            android:background="@drawable/buttonstyle1"
+            android:padding="15dp"/>
+        <ImageButton
+            android:src="@drawable/ic_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/edit"
+            android:layout_gravity="center"
+            android:background="@drawable/buttonstyle1"
+            android:padding="15dp"
+            android:layout_marginLeft="15dp"/>
+        <ImageButton
+            android:src="@drawable/ic_plus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/addContainer"
+            android:layout_gravity="center"
+            android:background="@drawable/buttonstyle1"
+            android:padding="15dp"
+            android:layout_marginLeft="15dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp">
+        <ImageButton
+            android:src="@drawable/ic_calc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/calcdistance"
+            android:layout_gravity="center"
+            android:background="@drawable/buttonstyle1"
+            android:padding="15dp"
+            android:layout_marginLeft="15dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calculer distance du port le plus proche"
+            android:textSize="15dp"
+            android:id="@+id/textDistance"
+            android:layout_gravity="center"/>
+    </LinearLayout>
 </LinearLayout>

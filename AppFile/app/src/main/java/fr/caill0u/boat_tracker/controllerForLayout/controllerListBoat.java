@@ -1,13 +1,13 @@
-package fr.caill0u.boattrackerapp.controllerForLayout;
+package fr.caill0u.boat_tracker.controllerForLayout;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import fr.caill0u.boattrackerapp.MainActivity;
-import fr.caill0u.boattrackerapp.R;
-import fr.caill0u.boattrackerapp.Utils.Util;
-import fr.caill0u.boattrackerapp.objects.Containership;
+import fr.caill0u.boat_tracker.MainActivity;
+import fr.caill0u.boat_tracker.R;
+import fr.caill0u.boat_tracker.Utils.Util;
+import fr.caill0u.boat_tracker.objects.Containership;
 
 /**
  * Created by Caill0u on 08/03/2019.

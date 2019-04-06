@@ -1,4 +1,4 @@
-package fr.caill0u.boattrackerapp;
+package fr.caill0u.boat_tracker;
 
 import org.junit.Test;
 

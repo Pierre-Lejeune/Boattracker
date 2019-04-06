@@ -1,6 +1,11 @@
-package fr.caill0u.boattrackerapp.objects;
+package fr.caill0u.boat_tracker.objects;
+
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Port {
     private static ArrayList<Port> allPorts = new ArrayList<>();
@@ -9,6 +14,7 @@ public class Port {
     private float latitude = Float.valueOf(0);
     private float longitude = Float.valueOf(0);
     private ArrayList<Container> containers = new ArrayList<>();
+    private List<String> containersString = new ArrayList<>();
 
     public Port(String name, float latitude, float longitude, int id) {
         this.name = name;
@@ -16,17 +22,13 @@ public class Port {
         this.longitude = longitude;
         this.id = id;
         allPorts.add(this);
-    }
-    public Port(String name, float latitude, float longitude) {
-        this.name = name;
-        this.latitude = latitude;
-        this.longitude = longitude;
-        allPorts.add(this);
-        this.id = allPorts.size();
+        pushToFireBase();
     }
 
     public void addContainer(Container container){
         containers.add(container);
+        containersString.add("Container/container" + container.getId());
+        pushToFireBase();
     }
 
     public int getId() {
@@ -49,6 +51,15 @@ public class Port {
         return allPorts;
     }
 
+    public void pushToFireBase(){
+        Map port = new HashMap();
+        port.put("name", this.name);
+        port.put("longitude", this.longitude);
+        port.put("latitude", this.latitude);
+        port.put("id", this.id);
+        port.put("container", this.containersString);
+        FirebaseFirestore.getInstance().document("Port/Port" + this.id).set(port);
+    }
     public static Port getPortById(int id){
         Port PortToReturn = null;
         for (Port port: allPorts){

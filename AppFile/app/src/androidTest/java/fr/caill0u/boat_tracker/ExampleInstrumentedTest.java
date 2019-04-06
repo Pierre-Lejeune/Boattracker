@@ -1,4 +1,4 @@
-package fr.caill0u.boattrackerapp;
+package fr.caill0u.boat_tracker;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("fr.caill0u.boattrackerapp", appContext.getPackageName());
+        assertEquals("fr.caill0u.boat_tracker", appContext.getPackageName());
     }
 }

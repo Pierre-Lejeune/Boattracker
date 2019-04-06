@@ -1,12 +1,12 @@
-package fr.caill0u.boattrackerapp.controllerForLayout;
+package fr.caill0u.boat_tracker.controllerForLayout;
 
 import android.view.LayoutInflater;
 import android.view.View;
 
 import com.google.android.gms.maps.SupportMapFragment;
 
-import fr.caill0u.boattrackerapp.MainActivity;
-import fr.caill0u.boattrackerapp.R;
+import fr.caill0u.boat_tracker.MainActivity;
+import fr.caill0u.boat_tracker.R;
 
 /**
  * Created by Caill0u on 08/03/2019.

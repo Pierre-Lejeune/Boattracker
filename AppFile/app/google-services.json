@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "1008841608327",
+    "firebase_url": "https://boattracker-e6d4e.firebaseio.com",
+    "project_id": "boattracker-e6d4e",
+    "storage_bucket": "boattracker-e6d4e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1008841608327:android:7ac4eda1f5686026",
+        "android_client_info": {
+          "package_name": "fr.caill0u.boat_tracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1008841608327-6d7560jekgosush57b4nqdt766e83ls5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "fr.caill0u.boat_tracker",
+            "certificate_hash": "1f595d8b5e7a0d7444a363426aea2e32147da3cf"
+          }
+        },
+        {
+          "client_id": "1008841608327-62bmrqlfs9hofnd44pq9dt49da26v4qq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "fr.caill0u.boat_tracker",
+            "certificate_hash": "dcff521af1de6dbf2bd62956ed1143e38f6939df"
+          }
+        },
+        {
+          "client_id": "1008841608327-d8klb24k18l7p5ecqskk1s26oqcuohb3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAC9Te2WzoD0h5bYZSFIL3WX83W1dMbYgU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1008841608327-d8klb24k18l7p5ecqskk1s26oqcuohb3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
