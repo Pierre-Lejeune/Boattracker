@@ -5,34 +5,27 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/AjoutBoatItem"
+            android:icon="@drawable/ic_directions_boat"
+            android:title="Ajouter un bateau" />
     </group>
 
     <item android:title="Communicate">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:id="@+id/ListeBoatItem"
+                android:icon="@drawable/ic_view_list"
+                android:title="Liste Bateaux" />
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:id="@+id/ListePortItem"
+                android:icon="@drawable/ic_view_list"
+                android:title="Liste Port" />
+            <item
+                android:id="@+id/MapItem"
+                android:icon="@drawable/ic_map"
+                android:title="Map" />
         </menu>
     </item>
+
 
 </menu>
