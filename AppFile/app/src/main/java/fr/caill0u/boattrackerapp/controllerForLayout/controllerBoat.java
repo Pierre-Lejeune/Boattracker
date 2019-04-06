@@ -25,6 +25,7 @@ public class controllerBoat {
         mainActivity.getLayoutMain().addView(LayoutInflater.from(mainActivity).inflate(R.layout.containership_view, null, false));
         displayBoat(containership);
         mainActivity.setMainView("Boat");
+        mainActivity.setContainershipToShow(containership);
     }
     private void displayBoat(final Containership containership) {
         TextView nomBateau = (TextView) mainActivity.findViewById(R.id.nomBateau);
