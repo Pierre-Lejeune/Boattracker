@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="fr.caill0u.boat_tracker.MainActivity"
+    tools:showIn="@layout/app_bar_main"
+    android:orientation="vertical"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="35dp"
+        android:text="Nom du bateau"
+        android:id="@+id/nomBateau"
+        android:layout_gravity="center"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Propriétaire : Inconnue"
+        android:textSize="15dp"
+        android:id="@+id/nomProprio"
+        android:layout_gravity="center"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Id : Inconnue"
+        android:textSize="15dp"
+        android:id="@+id/idBateau"
+        android:layout_gravity="center"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Longitude : Inconnue  |  Latitude : Inconnue"
+        android:textSize="15dp"
+        android:id="@+id/position"
+        android:layout_gravity="center"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Type : Inconnue"
+        android:textSize="15dp"
+        android:id="@+id/type"
+        android:layout_gravity="center"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Port : Ne semble pas ammaré"
+        android:textSize="15dp"
+        android:id="@+id/port"
+        android:layout_gravity="center"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Largeur : 0, Longueur : 0, Hauteur : 0, Nbr container:0"
+        android:textSize="15dp"
+        android:id="@+id/place"
+        android:layout_gravity="center"/>
+</LinearLayout>

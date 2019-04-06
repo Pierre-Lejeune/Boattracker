@@ -27,6 +27,12 @@ public class controllerListBoat {
         LinearLayout listBoat = mainActivity.findViewById(R.id.listBoat);
         for (final Containership containership : Containership.getAllContainerShips()) {
             LinearLayout layoutForContainerShip = Util.createLayoutForMyContainer(containership, mainActivity);
+            layoutForContainerShip.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    mainActivity.getControllerBoat1().loadListBoat(containership);
+                }
+            });
             listBoat.addView(layoutForContainerShip);
         }
     }

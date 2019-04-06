@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity
     private View MapView;
     private controllerListBoat controllerListBoat1;
     private controllerListPort controllerListPort1;
+    private controllerBoat controllerBoat1;
 
     private Containership containershipToShow = null;
 
@@ -44,6 +45,9 @@ public class MainActivity extends AppCompatActivity
     public LinearLayout getLayoutMain(){
         return this.layoutMain;
     }
+    public controllerBoat getControllerBoat1(){
+        return controllerBoat1;
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +58,7 @@ public class MainActivity extends AppCompatActivity
         Util.createPort();
         controllerListBoat1 = new controllerListBoat(this);
         controllerListPort1 = new controllerListPort(this);
+        controllerBoat1 = new controllerBoat(this);
         controllerListBoat1.loadListBoat();
     }
     @Override
