@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import fr.caill0u.boat_tracker.MainActivity;
 import fr.caill0u.boat_tracker.R;
+import fr.caill0u.boat_tracker.Utils.Util;
 import fr.caill0u.boat_tracker.objects.Containership;
 
 /**
@@ -94,6 +95,8 @@ public class controllerBoat {
                 }
             }
         });
+        if(containership.getName().equals("Yoo"))
+            mainActivity.getLayoutMain().addView(Util.createText("BreakDance, is always breakdance !", 13, mainActivity));
 
     }
 

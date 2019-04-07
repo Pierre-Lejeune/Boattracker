@@ -229,7 +229,7 @@ public class Util {
         ficheBateau.addView(layoutTextBateau);
         return ficheBateau;
     }
-    private static TextView createText(String s, int size, MainActivity mainActivity) {
+    public static TextView createText(String s, int size, MainActivity mainActivity) {
         TextView textView = new TextView(mainActivity);
         LinearLayout.LayoutParams paramForText = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         paramForText.gravity = Gravity.CENTER_HORIZONTAL;

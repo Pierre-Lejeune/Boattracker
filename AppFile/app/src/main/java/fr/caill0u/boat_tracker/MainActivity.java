@@ -82,8 +82,6 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         layoutMain = (LinearLayout) findViewById(R.id.layoutMain);
-        Util.createPort(db);
-        Util.createBoat(db);
         setDrawer();
         mapController1 = new mapController(this);
         controllerListBoat1 = new controllerListBoat(this);
