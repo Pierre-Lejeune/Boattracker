@@ -19,7 +19,7 @@ public class controllerConnexion {
     private Button buttonCon;
     private EditText login;
     private EditText mdp;
-
+    private Button googleConnect;
     public controllerConnexion(MainActivity mainActivity) {
         this.mainActivity = mainActivity;
     }
@@ -35,6 +35,13 @@ public class controllerConnexion {
         alert.setCancelable(false);
         login = alertLayout.findViewById(R.id.Login);
         mdp = alertLayout.findViewById(R.id.mdp);
+        googleConnect = alertLayout.findViewById(R.id.googleButtonConnect);
+        googleConnect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //TODOLOUIS
+            }
+        });
         alert.setPositiveButton("Connexion", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

@@ -75,16 +75,16 @@ public class Util {
                                         portRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                                             @Override
                                             public void onSuccess(DocumentSnapshot portDoc) {
-                                                Log.w("WAKANDA","Bateau " + containership.getId());
+                                                Log.w("Port Firebase","Bateau " + containership.getId());
                                                 try {
                                                     containership.setPort(Port.getPortById(Integer.valueOf(portDoc.get("id").toString())));
                                                 }catch (Exception e){
-                                                    Log.e("WAKANDA", "Erreur sur le bateau " + containership.getId() + "Port : " + portDoc.get("id").toString());
+                                                    Log.e("Port Firebase", "Erreur sur le bateau " + containership.getId() + "Port : " + portDoc.get("id").toString());
                                                 }
                                             }
                                         });
                                     }else{
-                                        Log.e("WAKANDA", "Le port n'existe pas");
+                                        Log.e("Port Firebase", "Le port n'existe pas");
                                     }
                                     List<String> group = (List<String>) boat.get("container");
                                     for(String container:group){
@@ -102,7 +102,7 @@ public class Util {
                                             }
                                         });
                                     }
-                                    Log.w("WAKANDA", "bateau " + containership.getId() + " ok ");
+                                    Log.w("Container Firebase", "bateau " + containership.getId() + " ok ");
                                 }
                             }catch (Exception e){
                                 Log.e("Boat-Tracker", "Erreur général d'accès à la base de donnée, vérifier votre connexion internet");
@@ -136,12 +136,12 @@ public class Util {
                                 }
                             }
                         } else {
-                            Log.d("WAKANDA", "Error getting documents: ", task.getException());
+                            Log.d("Port Firebase", "Error getting documents: ", task.getException());
                         }
                     }
                 });
     }
-    public static LinearLayout createLayoutForMyContainer(Containership containership, MainActivity mainActivity) {
+    public static LinearLayout createLayoutForMyContainerShip(Containership containership, MainActivity mainActivity) {
         LinearLayout ficheBateau = new LinearLayout(mainActivity);
         ficheBateau.setOrientation(LinearLayout.HORIZONTAL);
         ficheBateau.setBackgroundResource(R.drawable.border_bottom);
@@ -167,6 +167,36 @@ public class Util {
         layoutTextBateau.setLayoutParams(paramForLayoutOfText);
         layoutTextBateau.addView(createText("Nom : " + containership.getName(), 13, mainActivity));
         layoutTextBateau.addView(createText("Id : " + containership.getId(), 15, mainActivity));
+        ficheBateau.addView(layoutTextBateau);
+        return ficheBateau;
+    }
+    public static LinearLayout createLayoutForMyContainer(Container container, MainActivity mainActivity) {
+        LinearLayout ficheBateau = new LinearLayout(mainActivity);
+        ficheBateau.setOrientation(LinearLayout.HORIZONTAL);
+        ficheBateau.setBackgroundResource(R.drawable.border_bottom);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            ficheBateau.setElevation(10);
+        }
+        ficheBateau.setPadding(10,10,10,20);
+        LinearLayout.LayoutParams paramsForFicheBateau = new LinearLayout.LayoutParams(800, ViewGroup.LayoutParams.WRAP_CONTENT);
+        paramsForFicheBateau.gravity = Gravity.CENTER;
+        paramsForFicheBateau.topMargin=25;
+        ficheBateau.setLayoutParams(paramsForFicheBateau);
+        ImageView img = new ImageView(mainActivity);
+        img.setBackgroundResource(R.drawable.ic_container);
+        LinearLayout.LayoutParams paramsForImage = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        paramsForImage.gravity = Gravity.CENTER;
+        paramsForImage.leftMargin = 15;
+        img.setLayoutParams(paramsForImage);
+        ficheBateau.addView(img);
+        LinearLayout layoutTextBateau = new LinearLayout(mainActivity);
+        layoutTextBateau.setOrientation(LinearLayout.VERTICAL);
+        LinearLayout.LayoutParams paramForLayoutOfText = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        paramForLayoutOfText.gravity = Gravity.CENTER;
+        layoutTextBateau.setLayoutParams(paramForLayoutOfText);
+        layoutTextBateau.addView(createText("Hauteur : " + container.getHeight(), 13, mainActivity));
+        layoutTextBateau.addView(createText("Longueur : " + container.getWidth(), 13, mainActivity));
+        layoutTextBateau.addView(createText("Largeur : " + container.getLenght(), 13, mainActivity));
         ficheBateau.addView(layoutTextBateau);
         return ficheBateau;
     }

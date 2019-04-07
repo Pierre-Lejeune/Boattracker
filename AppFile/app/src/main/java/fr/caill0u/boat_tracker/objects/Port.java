@@ -30,6 +30,9 @@ public class Port {
         containersString.add("Container/container" + container.getId());
         pushToFireBase();
     }
+    public ArrayList<Container> getContainers(){
+        return containers;
+    }
 
     public int getId() {
         return id;
@@ -66,5 +69,11 @@ public class Port {
             if(port.getId() == id) PortToReturn = port;
         }
         return PortToReturn;
+    }
+
+    public void removeContainer(Container container){
+        containers.remove(container);
+        containersString.remove("Container/container"+container.getId());
+        pushToFireBase();
     }
 }

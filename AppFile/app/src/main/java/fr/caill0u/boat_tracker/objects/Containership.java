@@ -62,7 +62,7 @@ public class Containership {
             pushToFirestore();
             return true;
         }else{
-            Log.w("WAKANDA", "Le container était trop grand pour le bateau, celui ci ce trouve désormais dans le port le plus proche");
+            Log.w("Container Boat Add", "Le container était trop grand pour le bateau, celui ci ce trouve désormais dans le port le plus proche");
             DansLePortLePlusProche(container);
             return false;
         }
@@ -70,6 +70,7 @@ public class Containership {
     public void removeContainer(Container container){
         containers.remove(container);
         containersString.remove("Container/container"+container.getId());
+        pushToFirestore();
     }
     private boolean checkIfThisContainerIsNotTooMuch(Container container){
         double placecont=0;
@@ -192,5 +193,12 @@ public class Containership {
     }
     public static ArrayList<Containership> getAllContainerShips() {
         return allContainerShips;
+    }
+
+    public static Containership findById(Integer integer) {
+        for(Containership containership : getAllContainerShips()){
+            if(containership.getId() == integer) return containership;
+        }
+        return null;
     }
 }

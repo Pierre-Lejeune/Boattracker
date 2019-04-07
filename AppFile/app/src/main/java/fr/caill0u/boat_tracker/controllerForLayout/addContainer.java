@@ -38,9 +38,9 @@ public class addContainer {
 
         LinearLayout editArea = mainActivity.findViewById(R.id.editAreaContainer);
         final ImageButton confirmEdit = (ImageButton) mainActivity.findViewById(R.id.confirmeNewContainer);
-        editArea.addView(Util.createLayoutForEditThisParameter("Largeur :", mainActivity, largeur));
-        editArea.addView(Util.createLayoutForEditThisParameter("Longeur :", mainActivity, longueur));
-        editArea.addView(Util.createLayoutForEditThisParameter("Hauteur :", mainActivity, hauteur));
+        editArea.addView(Util.createLayoutForEditThisParameterForNumber("Largeur :", mainActivity, largeur));
+        editArea.addView(Util.createLayoutForEditThisParameterForNumber("Longeur :", mainActivity, longueur));
+        editArea.addView(Util.createLayoutForEditThisParameterForNumber("Hauteur :", mainActivity, hauteur));
         confirmEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

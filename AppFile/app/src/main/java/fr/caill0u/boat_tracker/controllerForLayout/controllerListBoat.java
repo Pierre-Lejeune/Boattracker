@@ -3,6 +3,9 @@ package fr.caill0u.boat_tracker.controllerForLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 import fr.caill0u.boat_tracker.MainActivity;
 import fr.caill0u.boat_tracker.R;
@@ -26,11 +29,17 @@ public class controllerListBoat {
     private void displayBoat() {
         LinearLayout listBoat = mainActivity.findViewById(R.id.listBoat);
         for (final Containership containership : Containership.getAllContainerShips()) {
-            LinearLayout layoutForContainerShip = Util.createLayoutForMyContainer(containership, mainActivity);
+            LinearLayout layoutForContainerShip = Util.createLayoutForMyContainerShip(containership, mainActivity);
             layoutForContainerShip.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    mainActivity.getControllerBoat1().loadListBoat(containership);
+                    if(FirebaseAuth.getInstance().getCurrentUser()!=null){
+                        mainActivity.getControllerBoat1().loadListBoat(containership);
+                    }else{
+                        Toast t = Toast.makeText(mainActivity, "Connectez vous pour modifier les bateaux", Toast.LENGTH_LONG);
+                        t.show();
+                    }
+
                 }
             });
             listBoat.addView(layoutForContainerShip);

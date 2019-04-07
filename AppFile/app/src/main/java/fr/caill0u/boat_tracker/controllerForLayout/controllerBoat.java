@@ -38,6 +38,7 @@ public class controllerBoat {
         final ImageButton consultOnMap = (ImageButton) mainActivity.findViewById(R.id.consultOnMap);
         ImageButton edit = (ImageButton) mainActivity.findViewById(R.id.edit);
         ImageButton container = (ImageButton) mainActivity.findViewById(R.id.addContainer);
+        ImageButton containerList = (ImageButton) mainActivity.findViewById(R.id.containerListView);
         final ImageButton calcdistance = (ImageButton) mainActivity.findViewById(R.id.calcdistance);
         nomBateau.setText("Nom : " + containership.getName());
         nomProprio.setText("Propriétaire : " + containership.getCaptainName());
@@ -47,6 +48,19 @@ public class controllerBoat {
         place.setText("Largeur : " + containership.getType().getLenght() + ", Longueur : " + containership.getType().getWidth()+", Hauteur : " + containership.getType().getHeight() + ", Nbr container:" + containership.getContainers().size());
         if(containership.getPort() == null) port.setText("Port : Ne semble pas ammaré");
         else port.setText("Port : " + containership.getPort().getName());
+        if(containership.getContainers().size()==0){
+            containerList.setVisibility(View.INVISIBLE);
+            containerList.setMaxWidth(0);
+            containerList.setMaxHeight(0);
+        }else{
+            containerList.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    mainActivity.getControllerListContainer1().loadListContainer(containership);
+                }
+            });
+        }
+
         consultOnMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -50,7 +50,9 @@ public class MainActivity extends AppCompatActivity
     private controllerInscription controllerInscription1;
     private controllerBoat controllerBoat1;
     private controllerListPort controllerListPort1;
+    private controllerListContainer controllerListContainer1;
     private addContainer addContainer1;
+    private controllerMoveContainer controllerMoveContainer1;
 
     private Containership containershipToShow = null;
 
@@ -92,6 +94,8 @@ public class MainActivity extends AppCompatActivity
         controllerListPort1 = new controllerListPort(this);
         addContainer1 = new addContainer(this);
         controllerConnexion1 = new controllerConnexion(this);
+        controllerListContainer1 = new controllerListContainer(this);
+        controllerMoveContainer1 = new controllerMoveContainer(this);
         mapController1.setMap();
         mapController1.loadMap();
         mAuth = FirebaseAuth.getInstance();
@@ -105,6 +109,12 @@ public class MainActivity extends AppCompatActivity
     }
     public addContainer getAddContainer1(){
         return addContainer1;
+    }
+    public controllerListContainer getControllerListContainer1(){
+        return controllerListContainer1;
+    }
+    public controllerMoveContainer getControllerMoveContainer1(){
+        return controllerMoveContainer1;
     }
 
     @Override
